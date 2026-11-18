@@ -22,7 +22,7 @@ function sel(){var pf=E('s_pf').value,p=v('s_price'),fee=p?F[pf](p):0,kept=p-fee
  E('s_out').innerHTML='Fees: <b>'+m(fee)+'</b>'+(p?' ('+(fee/p*100).toFixed(1)+'% of the sale)':'')+
  '<br><span class="big'+(kept<0?' bad':'')+'">You keep: '+m(kept)+'</span>'+(p?' <small>('+(kept/p*100).toFixed(0)+'% of the price, before tax)</small>':'');
  var t=pf=='etsy'?['Etsy Seller Profit Tracker','https://hustlesheet.gumroad.com/l/etsy-profit-tracker','$19']:['Reseller Profit Tracker','https://hustlesheet.gumroad.com/l/reseller-tracker','$17'];
- E('s_cta').innerHTML='<strong>Do this for every item, automatically:</strong> the <a href="'+t[1]+'">'+t[0]+'</a> ('+t[2]+') works out the fee, profit and tax set-aside on everything you sell.'}
+ E('s_cta').innerHTML='<strong>Do this for every item, automatically:</strong> the <a href="'+t[1]+'">'+t[0]+'</a> ('+t[2]+') works out the fee, profit and tax set-aside on everything you sell. Not ready to buy? Start with the <a href="https://hustlesheet.gumroad.com/l/free-tracker">free mini tracker</a>.'}
 if(E('d_out')){['d_pay','d_mi','d_min'].forEach(function(id){E(id).addEventListener('input',function(){drv();track('driver')})});drv()}
 if(E('s_out')){['s_pf','s_price','s_cost','s_ship'].forEach(function(id){E(id).addEventListener('input',function(){sel();track('seller')})});sel()}
 })();</script><!--/hs-calc--><h2>The fees, side by side</h2><ul>

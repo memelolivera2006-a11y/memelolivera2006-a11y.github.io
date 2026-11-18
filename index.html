@@ -17,7 +17,7 @@
 <label>Minutes<input id=d_min type=number inputmode=numeric min=1 step=1 value=30></label>
 <div class=out id=d_out></div>
 <small>Car cost at the 2026 IRS rate of 76&cent; a mile (gas, repairs, tires, insurance, wear). Tax: self-employment tax plus 12% income tax. Example math, not tax advice.</small>
-<p><strong>Log every offer like this, automatically:</strong> the <a href='https://hustlesheet.gumroad.com/l/gig-driver-mileage-log'>Gig Driver Mileage &amp; Expense Log</a> ($17) shows profit per mile and per hour by app and your quarterly tax set-aside. Code WELCOME10 = 10% off.</p></div>
+<p><strong>Log every offer like this, automatically:</strong> the <a href='https://hustlesheet.gumroad.com/l/gig-driver-mileage-log'>Gig Driver Mileage &amp; Expense Log</a> ($17) shows profit per mile and per hour by app and your quarterly tax set-aside. Code WELCOME10 = 10% off. Not ready to buy? Start with the <a href='https://hustlesheet.gumroad.com/l/free-tracker'>free mini tracker</a>.</p></div>
 
 <div class=calc id=sel><h2>What do you keep after fees?</h2>
 <small>eBay, Poshmark, Mercari, Depop and Etsy seller fees on the item price, US rates checked October 2026.</small><br>
@@ -52,7 +52,7 @@ function sel(){
  document.getElementById('s_out').innerHTML='Fees: <b>'+m(fee)+'</b>'+(p?' ('+(fee/p*100).toFixed(1)+'% of the sale)':'')+
   '<br><span class="big'+(kept<0?' bad':'')+'">You keep: '+m(kept)+'</span>'+(p?' <small>('+(kept/p*100).toFixed(0)+'% of the price, before tax)</small>':'');
  var t=pf=='etsy'?T.etsy:T.other;
- document.getElementById('s_cta').innerHTML='<strong>Do this for every item, automatically:</strong> the <a href="'+t[1]+'">'+t[0]+'</a> ('+t[2]+') works out the fee, profit and tax set-aside on everything you sell. Code WELCOME10 = 10% off.';
+ document.getElementById('s_cta').innerHTML='<strong>Do this for every item, automatically:</strong> the <a href="'+t[1]+'">'+t[0]+'</a> ('+t[2]+') works out the fee, profit and tax set-aside on everything you sell. Code WELCOME10 = 10% off. Not ready to buy? Start with the <a href=\"https://hustlesheet.gumroad.com/l/free-tracker\">free mini tracker</a>.';
 }
 ['d_pay','d_mi','d_min'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){drv();track('driver')})});
 ['s_pf','s_price','s_cost','s_ship'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){sel();track('seller')})});
