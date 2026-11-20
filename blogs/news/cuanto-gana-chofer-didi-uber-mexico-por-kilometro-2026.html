@@ -1,5 +1,29 @@
 <!doctype html><html lang=es><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>Cuánto gana un chofer de DiDi/Uber en México por kilómetro (2026)</title><meta name=description content="Ni Uber ni DiDi te pagan por kilómetro. Te pagan por viaje. Pero si divides lo que te queda entre los kilómetros que manejaste, ese número es el que de..."><link rel=canonical href='https://hustlesheet.store/blogs/news/cuanto-gana-chofer-didi-uber-mexico-por-kilometro-2026'><style>body{background:#0b0b0b;color:#eee;font:17px/1.6 Georgia,serif;max-width:720px;margin:2rem auto;padding:0 1rem}a{color:#d4af37}h1,h2,h3{color:#d4af37}img{max-width:100%;height:auto}table{border-collapse:collapse;display:block;overflow-x:auto}td,th{border:1px solid #444;padding:4px 8px}header,footer{font-size:15px;color:#aaa}</style><header><a href='/'>HustleSheet Co</a> &middot; <a href='/blogs/news'>All articles</a> &middot; <a href='/#shop'>Shop</a></header><article><h1>Cuánto gana un chofer de DiDi/Uber en México por kilómetro (2026)</h1><rte-formatter>
-    <p><strong>Respuesta corta:</strong> ni Uber ni DiDi te pagan por kilómetro. Te pagan por viaje. Pero si divides lo que te queda entre los kilómetros que manejaste, ese número es el que de verdad dice si te conviene salir. En este artículo hacemos esa cuenta con gastos reales de 2026: gasolina, mantenimiento, desgaste del auto y retenciones.</p>
+    <p><strong>Respuesta corta:</strong> ni Uber ni DiDi te pagan por kilómetro. Te pagan por viaje. Pero si divides lo que te queda entre los kilómetros que manejaste, ese número es el que de verdad dice si te conviene salir. En este artículo hacemos esa cuenta con gastos reales de 2026: gasolina, mantenimiento, desgaste del auto y retenciones.</p><!--hs-calc--><style>.calc{border:1px solid #d4af37;border-radius:8px;padding:12px 16px;margin:1.2em 0}.calc h2{margin:.2em 0 .4em;font-size:1.3em}.calc label{display:inline-block;margin:0 12px 8px 0;font-size:15px;color:#ccc}.calc input,.calc select{display:block;width:7.5em;margin-top:2px;padding:6px 8px;font:16px Georgia,serif;background:#161616;color:#eee;border:1px solid #555;border-radius:4px}.calc .out{background:#141414;border-radius:6px;padding:8px 12px;margin:8px 0;font-size:16px}.calc .big{font-size:1.25em;color:#d4af37}.calc .bad{color:#ff7b6b}.calc small{color:#aaa}</style><div class=calc id=es><h2>Haz la cuenta: ¿te conviene este viaje?</h2>
+<small>Cuenta todos los km: ir por el pasaje o el pedido, el viaje y regresar a tu zona.</small><br>
+<label>Vehículo<select id=e_veh><option value=auto selected>Auto</option><option value=moto>Moto</option></select></label>
+<label>Te pagó la app ($)<input id=e_pay type=number inputmode=decimal min=0 step=1 value=85></label>
+<label>Km totales<input id=e_km type=number inputmode=decimal min=0 step=0.1 value=12></label>
+<label>Minutos<input id=e_min type=number inputmode=numeric min=1 step=1 value=25></label>
+<label>Rinde (km/l)<input id=e_kml type=number inputmode=decimal min=1 step=0.5 value=13></label>
+<label>Litro ($)<input id=e_gas type=number inputmode=decimal min=0 step=0.01 value=23.68></label>
+<div class=out id=e_out></div>
+<small>Lo que te pagó la app después de la comisión, propina incluida. Mantenimiento y desgaste son ejemplos (auto $2.45/km, moto $1.25/km); ISR 2.1% con RFC. Cuenta de ejemplo, no es asesoría fiscal.</small>
+<p><strong>Anota cada turno y que la hoja haga la cuenta:</strong> el <a href='https://hustlesheet.gumroad.com/l/control-de-ganancias'>Control de Ganancias para Choferes y Repartidores</a> ($9 USD, Excel + Google Sheets) te da tu ganancia neta por km, por hora y por app.</p></div>
+<script>(function(){
+function E(id){return document.getElementById(id)}
+function v(id){var x=parseFloat(E(id).value);return isFinite(x)&&x>0?x:0}
+function m(x){return(x<0?'-$':'$')+Math.abs(x).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2})}
+var C={auto:{kml:13,otros:2.45},moto:{kml:35,otros:1.25}},used=0;
+function track(){if(used)return;used=1;try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'calc/chofer-es',title:'from '+location.pathname,event:true})}catch(e){}}
+function run(){var c=C[E('e_veh').value],pay=v('e_pay'),km=v('e_km'),hrs=(v('e_min')||1)/60,kml=v('e_kml')||c.kml;
+ var gas=km/kml*v('e_gas'),otros=km*c.otros,isr=pay*0.021,real=pay-gas-otros-isr;
+ E('e_out').innerHTML='Te pagaron <b>'+m(km?pay/km:0)+' por km</b> &middot; gasolina: '+m(gas)+' &middot; mantenimiento y desgaste: '+m(otros)+' &middot; ISR: '+m(isr)+
+ '<br><span class="big'+(real<0?' bad':'')+'">Ganancia real: '+m(real)+'</span> <small>('+m(km?real/km:0)+' por km)</small>'+
+ '<br>Por hora: <b>'+m(real/hrs)+'</b> <small>(la app dice '+m(pay/hrs)+')</small>'}
+E('e_veh').addEventListener('change',function(){E('e_kml').value=C[E('e_veh').value].kml;run();track()});
+['e_pay','e_km','e_min','e_kml','e_gas'].forEach(function(id){E(id).addEventListener('input',function(){run();track()})});run()
+})();</script><!--/hs-calc-->
 
 <h2>Uber y DiDi no pagan por kilómetro (aunque así parezca)</h2>
 <p>Cada viaje tiene una tarifa, y la app se queda con una comisión. Según reportes de conductores, Uber puede quedarse con hasta 25% del viaje, y DiDi con entre 15% y 30%, dependiendo del viaje. Lo que ves en la app ya trae ese descuento.</p>
